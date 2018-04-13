@@ -1,0 +1,4 @@
+It's a simple django 2.0 project with allauth for user authentication. The docs for allauth http://django-allauth.readthedocs.io/en/latest/overview.html.
+The profiles app is made to handle the home page.
+The math_tests app is made to handle math_tests.
+They all use bootstrap 3.3.7. 
