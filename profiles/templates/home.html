@@ -1,0 +1,45 @@
+{% load staticfiles %}
+
+
+
+<link href="{% static 'profiles/css/bootstrap-theme.min.css' %}" type='text/css' rel="stylesheet">
+<link href="{% static 'profiles/css/bootstrap.min.css' %}" type='text/css' rel="stylesheet">
+<link rel='stylesheet' type='text/css' href="{% static 'profiles/css/main.css' %}"/>		
+	{% block styles%}
+	<style>
+		.jumbotron{
+			text-align:center;
+		
+		}
+	</style>
+	{% endblock %}
+
+
+	{% block content %}
+	<div class = 'col-md-4 col-md-offset-4'>
+		<div class="jumbotron">
+			<h1>hello {{ user.username }}</h1>
+			{% if request.user.is_authenticated%}
+			<h1>See our <a href="{%url 'test_1'%}">current</a> test!</h1>
+			{%endif%}
+			<form method="GET">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit" class="btn btn-danger" role="button">
+				I've filled the answers</button>
+			</form>
+			<h6>
+				{% if not request.user.is_authenticated %}
+                <li><a href="{% url 'account_signup'%}">Sign up</a></li>
+                <li><a href="{% url 'account_login'%}">Login</a></li>
+				{% else %}
+                <li><a href="{% url 'account_logout'%}">Logout</a></li>
+				{% endif %}
+			</h6>
+		</div>
+	</div>
+
+	{% endblock %}
+
+
+

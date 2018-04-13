@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+		<link href="{% static 'profiles/css/bootstrap-theme.min.css' %}" type='text/css' rel="stylesheet">
+		<link href="{% static 'profiles/css/bootstrap.min.css' %}" type='text/css' rel="stylesheet">
+		<link rel='stylesheet' type='text/css' href="{% static 'profiles/css/main.css' %}"/>		
+  </head>
+  <body>
+		<div class = 'col-md-4 col-md-offset-4'>
+			<div class="jumbotron">
+			{% block content %}
+
+			{% endblock %}
+
+
+			</div>
+		</div>
+	</body>
+</html>	

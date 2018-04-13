@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+
+
+{% block content %}
+
+<form method="GET">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-danger" role="button">
+I've filled the answers</button>
+</form>
+
+{% endblock %}
