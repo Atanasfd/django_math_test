@@ -22,15 +22,18 @@ from django.conf import settings
 
 from profiles import views as profiles_views
 from math_tests import views as math_tests_views
+from job_application import views as job_application_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('^$',profiles_views.home,name='home'),
     re_path('correct/',profiles_views.correct,name='correct'),
-    re_path('wrong/',profiles_views.wrong,name='wrong'),
-    re_path('test_1/',math_tests_views.Test_1,name='test_1' ),
+    re_path(r'wrong/',profiles_views.wrong,name='wrong'),
+    re_path('test_1/',math_tests_views.Test_1_view,name='test_1' ),
     re_path('thank_you/',math_tests_views.thank_you,name='thank_you' ),
     re_path('accounts/', include('allauth.urls')),
+    re_path('job_application_1/',job_application_views.job_application_1_view,name='job_application_1'),
+    re_path('done/',job_application_views.done,name='done'),
 ]
 
 if settings.DEBUG:
