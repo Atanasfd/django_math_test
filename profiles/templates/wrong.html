@@ -1,8 +1,27 @@
 {% extends 'base.html'%}
 
-	
+
 
 {% block content %}
-<h2>Well it's wrong <br>but you can improve!<br> Click <a href="/accounts/signup/">here<a/></h2>
+
+{% if request.session.firstQuestion != 11  %}
+<h1> Wrong! 5+6 does not equal {{ request.session.firstQuestion }} </h1>
+{% endif %}	
+
+{% if request.session.secondQuestion != 30  %}
+<h1> Wrong! 5*6 does not equal {{ request.session.secondQuestion }} </h1>
+{% endif %}
+
+{% if request.session.thirdQuestion != 4  %}
+<h1> Wrong! 12/3 does not equal {{ request.session.thirdQuestion }} </h1>
+{% endif %}
+
+{% if request.session.fourthQuestion != 5  %}
+<h1> Wrong! 8-3 does not equal {{ request.session.fourthQuestion }} </h1>
+{% endif %}	
+
+<h2>Well it's wrong  <br>
+but you can improve!<br>
+Click <a href="/accounts/signup/">here<a/></h2>
 <h2><a href="/accounts/login/">Already a member? Log in!!!</a></h2>
 {% endblock %}

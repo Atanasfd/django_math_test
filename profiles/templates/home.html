@@ -21,6 +21,7 @@
 			<h1>hello {{ user.username }}</h1>
 			{% if request.user.is_authenticated%}
 			<h1>See our <a href="{%url 'test_1'%}">current</a> test!</h1>
+			<h1> Check out our <a href ="{%url 'job_application_1'%}">current job application</a>!</h1>
 			{%endif%}
 			<form method="GET">
 				{% csrf_token %}
