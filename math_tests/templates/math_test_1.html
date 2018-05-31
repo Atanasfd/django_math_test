@@ -3,12 +3,14 @@
 
 
 {% block content %}
-
-<form method="GET">
+{% if math_tests_test_1_math.username == user.username %}
+<h1>You've already done it!</h1>
+{% else %}
+<form method="POST">
 {% csrf_token %}
 {{ form.as_p }}
 <button type="submit" class="btn btn-danger" role="button">
 I've filled the answers</button>
 </form>
-
+{% endif %}
 {% endblock %}

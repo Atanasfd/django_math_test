@@ -1,0 +1,14 @@
+{%extends 'base_jobs.html'%}
+
+
+
+{% block content %}
+<h1>Company_1 is looking for a  job candidate </h1>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-danger" role="button">
+I've filled the answers and I apply</button>
+</form>
+
+{% endblock %}
